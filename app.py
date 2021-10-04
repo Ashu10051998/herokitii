@@ -33,7 +33,7 @@ class VideoTransformer(VideoTransformerBase):
     def transform(self, frame):
         label=[]
         img = frame.to_ndarray(format="bgr24")
-        faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades +'haarcascade_frontalface_default.xml')
+        faceCascade = cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
         Classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise'] 
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = faceCascade.detectMultiScale(gray, 1.3,1)
